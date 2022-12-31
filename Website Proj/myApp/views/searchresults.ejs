@@ -13,6 +13,12 @@
             text-align: center;
             -webkit-text-stroke: 1px blue;
         }
+
+        h3{
+            color: greenyellow;
+            text-align: left;
+            -webkit-text-stroke: 1px blue;
+        }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,8 +47,11 @@
 
     <ul>
         <% for(var i=0 ; i< results.length ; i++ ) { %>
-            <li><a href = "/<%- results[i] %>" target = "blank" id = hyperlink><%- results[i] %></a> </li>
-          <% }; %>
+            <li><a href = "/<%- results[i] %>" target="_self" id = hyperlink><%- results[i] %></a> </li>
+        <% }; %>
+        <% if (results.length==0) { %>
+            <h3>Destination not Found</h3>
+        <% }; %>
 
 </ul>
 </body>

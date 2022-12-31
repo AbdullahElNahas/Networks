@@ -338,15 +338,15 @@ app.post('/search', function(req, res){
     if(Cities[i].toLowerCase().includes(srch)){
       results.push(Cities[i]);
     }
-  }
-  if(results != [])
+  } 
     res.render('searchresults',{results})
-  else
-    res.send("Movie not found") 
 })
 
 
 
-
-
-app.listen(3000);
+if (process.env.PORT) {
+  app.listen(process.env.PORT, function () { console.log('Server started') });
+}
+else {
+  app.listen(3000, function () { console.log('Server started on port 3000') });
+}
