@@ -332,7 +332,7 @@ app.post('/', function (req, res) {
 var Cities=['annapurna','bali','inca','paris','rome','santorini'];
 
 app.post('/search', function(req, res){
-  var srch = req.body.Search;
+  var srch = req.body.Search.toLowerCase();
   results=[];
   for(i = 0; i<Cities.length; i++){
     if(Cities[i].toLowerCase().includes(srch)){
